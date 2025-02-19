@@ -15,3 +15,4 @@ rootProject.name = "kLLaMa-jvm"
 
 include("llama-library")
 include("jvm-app")
+include("kLLaMa")

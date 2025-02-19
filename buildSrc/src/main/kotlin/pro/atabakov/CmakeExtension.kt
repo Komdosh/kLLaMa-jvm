@@ -4,6 +4,8 @@ import org.gradle.api.provider.Property
 
 abstract class CmakeExtension {
     abstract val cmakePath: Property<String>
+
+    abstract val jniLibProjectName: Property<String>
 }
 
 
