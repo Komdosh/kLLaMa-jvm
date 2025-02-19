@@ -7,6 +7,11 @@ dependencies {
 //    implementation(project(":cpp-library"))
 }
 
+val includeCppProjects =
+    listOf(":cpp-library", ":llama-library")
+        .map { project(it).layout.buildDirectory.get() }
+        .map { it.dir("cmake-build").asFile }
+
 tasks.register<JavaExec>("run") {
     notCompatibleWithConfigurationCache("Task uses dynamic configuration")
 
@@ -15,6 +20,9 @@ tasks.register<JavaExec>("run") {
     mainClass.set("AppKt") // Fully qualified name of the main class
     classpath = sourceSets.main.get().runtimeClasspath
     doFirst {
-        systemProperty("java.library.path", "${project(":cpp-library").layout.buildDirectory.get()}/cmake-build")
+        systemProperty(
+            "java.library.path",
+            includeCppProjects.joinToString(":")
+        )
     }
 }
