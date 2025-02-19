@@ -4,13 +4,13 @@ plugins {
 
 dependencies {
     implementation(kotlin("stdlib"))
-//    implementation(project(":cpp-library"))
+    implementation(libs.kotlinxCoroutines)
 }
 
 val includeCppProjects =
-    listOf(":cpp-library", ":llama-library")
-        .map { project(it).layout.buildDirectory.get() }
-        .map { it.dir("cmake-build").asFile }
+    listOf(":llama-library")
+        .map { projectName -> project(projectName).layout.buildDirectory.get() }
+        .map { buildDirectory -> buildDirectory.dir("cmake-build").asFile }
 
 tasks.register<JavaExec>("run") {
     notCompatibleWithConfigurationCache("Task uses dynamic configuration")
@@ -25,4 +25,6 @@ tasks.register<JavaExec>("run") {
             includeCppProjects.joinToString(":")
         )
     }
+
+    dependsOn(":llama-library:compileNative")
 }

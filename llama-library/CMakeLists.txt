@@ -62,6 +62,7 @@ set(LLAMA_SOURCES
         ${LLAMA_COMMON_DIR}/ngram-cache.cpp
         ${LLAMA_COMMON_DIR}/sampling.cpp
 
+        src/main/cpp/inference/string-utils.h
         src/main/cpp/inference/inference.cpp
         src/main/cpp/inference/inference.h
         src/main/cpp/inference-adapter.cpp
