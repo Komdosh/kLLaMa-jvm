@@ -25,7 +25,10 @@ class CmakeBuildNativePlugin : Plugin<Project> {
 
             val cmakePath = extension.cmakePath.get()
 
-            workingDir = project.projectDir // Set the working directory
+
+            workingDir = project.projectDir
+
+            inputs.files(workingDir.resolve("CMakeLists.txt"))
 
             commandLine(
                 cmakePath,
@@ -52,9 +55,12 @@ class CmakeBuildNativePlugin : Plugin<Project> {
             val cmakePath = extension.cmakePath.get()
 
             val buildDir = project.layout.buildDirectory.dir("cmake-build").get().asFile
+
+            inputs.files(project.layout.buildDirectory.dir("cmake-build/CMakeCache.txt").get().asFile)
             commandLine(
                 cmakePath,
                 "--build", buildDir.absolutePath,
+                "-j", "8",
                 "--config", "Release"
             )
 

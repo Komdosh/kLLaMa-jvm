@@ -13,6 +13,6 @@ plugins {
 
 rootProject.name = "kLLaMa-jvm"
 
-include("sample-cpp")
 include("cpp-library")
+include("llama-library")
 include("jvm-app")

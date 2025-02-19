@@ -23,7 +23,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/cpp-library" />
             <option value="$PROJECT_DIR$/jvm-app" />
-            <option value="$PROJECT_DIR$/sample-cpp" />
+            <option value="$PROJECT_DIR$/llama-library" />
           </set>
         </option>
       </GradleProjectSettings>
