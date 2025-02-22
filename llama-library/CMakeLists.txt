@@ -82,7 +82,9 @@ target_include_directories(
 target_compile_options(
         llama
         PUBLIC
-        -DGGML_USE_CPU -DGGML_USE_CPU_AARCH64 -O3
+        -DGGML_USE_CPU
+        -DGGML_USE_CPU_AARCH64
+        -O3
 )
 
 # Export symbols for JNI

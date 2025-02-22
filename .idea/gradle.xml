@@ -21,7 +21,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/jvm-app" />
+            <option value="$PROJECT_DIR$/examples" />
+            <option value="$PROJECT_DIR$/examples/kotlin-jvm-app" />
             <option value="$PROJECT_DIR$/kLLaMa" />
             <option value="$PROJECT_DIR$/llama-library" />
           </set>
