@@ -1,4 +1,4 @@
-package pro.tabakov.inference
+package pro.tabakov.kllama
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

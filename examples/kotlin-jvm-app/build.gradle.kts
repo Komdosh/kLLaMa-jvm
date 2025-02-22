@@ -20,6 +20,6 @@ dependencies {
 tasks.register<JavaExec>("run") {
     group = "application"
     description = "Runs the JVM application"
-    mainClass.set("AppKt") // Fully qualified name of the main class
+    mainClass.set("pro.atabakov.AppKt") // Fully qualified name of the main class
     classpath = sourceSets.main.get().runtimeClasspath
 }

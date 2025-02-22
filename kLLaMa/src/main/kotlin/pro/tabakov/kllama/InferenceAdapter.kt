@@ -1,4 +1,4 @@
-package pro.tabakov.inference
+package pro.tabakov.kllama
 
 class InferenceAdapter {
     external fun loadModel(modelPath: String, temperature: Float, contextSize: Long, saveChatMessages: Boolean): Long

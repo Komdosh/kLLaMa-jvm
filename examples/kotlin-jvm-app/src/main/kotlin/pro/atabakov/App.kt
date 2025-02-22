@@ -1,5 +1,7 @@
+package pro.atabakov
+
 import kotlinx.coroutines.runBlocking
-import pro.tabakov.inference.InferenceFactory
+import pro.tabakov.kllama.InferenceFactory
 
 fun main() {
     System.loadLibrary("llama")

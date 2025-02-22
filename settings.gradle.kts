@@ -14,5 +14,7 @@ plugins {
 rootProject.name = "kLLaMa-jvm"
 
 include("llama-library")
-include("examples:kotlin-jvm-app")
 include("kLLaMa")
+
+include("examples:kotlin-jvm-app")
+include("examples:java-jvm-app")

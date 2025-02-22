@@ -1,4 +1,4 @@
-package pro.tabakov.inference
+package pro.tabakov.kllama
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
