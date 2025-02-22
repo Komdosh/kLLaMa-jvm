@@ -1,3 +1,3 @@
 # kLLaMa-jvm
 
-`gradle jvm-app:run`
+`gradle examples:kotlin-jvm-app:run`

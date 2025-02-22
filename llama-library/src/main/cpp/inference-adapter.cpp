@@ -3,7 +3,7 @@
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_loadModel(
+Java_pro_tabakov_kllama_InferenceAdapter_loadModel(
         JNIEnv *env,
         jobject that,
         jstring modelPath,
@@ -28,14 +28,14 @@ Java_pro_tabakov_inference_InferenceAdapter_loadModel(
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_contextSizeUsed(JNIEnv *env, jobject that, jlong modelPtr) {
+Java_pro_tabakov_kllama_InferenceAdapter_contextSizeUsed(JNIEnv *env, jobject that, jlong modelPtr) {
     Inference *inference = reinterpret_cast<Inference *>(modelPtr);
     return inference->usedContextSize();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_close(
+Java_pro_tabakov_kllama_InferenceAdapter_close(
         JNIEnv *env,
         jobject that,
         jlong modelPtr
@@ -46,7 +46,7 @@ Java_pro_tabakov_inference_InferenceAdapter_close(
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_addChatMessage(JNIEnv *env, jobject that, jlong modelPtr, jstring message,
+Java_pro_tabakov_kllama_InferenceAdapter_addChatMessage(JNIEnv *env, jobject that, jlong modelPtr, jstring message,
                                                  jstring role) {
     jboolean isCopy = true;
     const char *messageCstr = env->GetStringUTFChars(message, &isCopy);
@@ -59,7 +59,7 @@ Java_pro_tabakov_inference_InferenceAdapter_addChatMessage(JNIEnv *env, jobject 
 
 extern "C"
 JNIEXPORT jfloat JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_generationTime(JNIEnv *env, jobject that, jlong modelPtr) {
+Java_pro_tabakov_kllama_InferenceAdapter_generationTime(JNIEnv *env, jobject that, jlong modelPtr) {
     Inference *inference = reinterpret_cast<Inference *>(modelPtr);
     return inference->generationTime();
 }
@@ -67,7 +67,7 @@ Java_pro_tabakov_inference_InferenceAdapter_generationTime(JNIEnv *env, jobject 
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_startCompletion(
+Java_pro_tabakov_kllama_InferenceAdapter_startCompletion(
         JNIEnv *env,
         jobject that,
         jlong modelPtr,
@@ -82,7 +82,7 @@ Java_pro_tabakov_inference_InferenceAdapter_startCompletion(
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_completionLoop(
+Java_pro_tabakov_kllama_InferenceAdapter_completionLoop(
         JNIEnv *env,
         jobject that,
         jlong modelPtr
@@ -100,7 +100,7 @@ Java_pro_tabakov_inference_InferenceAdapter_completionLoop(
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_pro_tabakov_inference_InferenceAdapter_stopCompletion(
+Java_pro_tabakov_kllama_InferenceAdapter_stopCompletion(
         JNIEnv *env,
         jobject that,
         jlong modelPtr
