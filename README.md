@@ -17,6 +17,7 @@ Simple example of using [llama.cpp](https://github.com/ggerganov/llama.cpp) with
 
 For now llama is built only for Mac M processors.
 You can tweak build options in 
+
 `llama-library/CMakeLists.txt`
 
 Compile llama:
