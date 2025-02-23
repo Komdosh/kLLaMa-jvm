@@ -8,13 +8,13 @@ fun main() {
 
     runBlocking {
         val kLLaMa = InferenceFactory.loadModel(
-            "/Users/komdosh/Projects/kLLaMa-jvm/mythologic-mini-7b.Q2_K.gguf",
-            0.0f,
-            0L
+            "/path/to/model.gguf", // Path to model
+            0.0f, // Temperature
+            0L // Context Size
         )
         println(kLLaMa.getContextSizeUsed())
 
-        kLLaMa.ask("HI!!").collect { message ->
+        kLLaMa.ask("HI!").collect { message ->
             print(message)
         }
     }
